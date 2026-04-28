@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>小六壬 AI · 中国大陆上线战略汇报</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f0a1f;
+    --deep:#1a1033;
+    --gold:#d4af37;
+    --gold2:#f5d77a;
+    --mist:#b9a7e6;
+  }
+  html,body{margin:0;padding:0;background:#000;color:#fff;font-family:'Noto Sans SC',system-ui,sans-serif;overflow:hidden;}
+  .serif{font-family:'Noto Serif SC',serif;}
+  .deck{width:100vw;height:100vh;position:relative;}
+  section.slide{
+    position:absolute;inset:0;width:100%;height:100%;
+    background:radial-gradient(ellipse at top,#241445 0%,#0f0a1f 55%,#06030f 100%);
+    display:flex;flex-direction:column;
+    padding:48px 72px 56px 72px;
+    box-sizing:border-box;
+    opacity:0;pointer-events:none;
+    transform:translateX(40px);
+    transition:opacity .55s ease, transform .55s ease;
+    overflow:hidden;
+  }
+  section.slide.active{opacity:1;pointer-events:auto;transform:translateX(0);}
+  /* header / footer */
+  .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,175,55,.25);padding-bottom:14px;}
+  .hd .brand{display:flex;align-items:center;gap:12px;}
+  .hd .logo{width:34px;height:34px;}
+  .hd .pname{font-size:14px;letter-spacing:.18em;color:var(--gold2);}
+  .hd .ptitle{font-size:13px;color:#cfc6e8;letter-spacing:.1em;}
+  .ft{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8b80a8;letter-spacing:.12em;border-top:1px solid rgba(212,175,55,.15);padding-top:10px;margin-top:auto;}
+  .ft .conf{color:#d4af37aa;}
+  /* gold accents */
+  .gold{color:var(--gold);}
+  .gold2{color:var(--gold2);}
+  .mist{color:var(--mist);}
+  .chip{display:inline-block;padding:4px 12px;border:1px solid rgba(212,175,55,.5);border-radius:999px;color:var(--gold2);font-size:12px;letter-spacing:.18em;}
+  .card{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(212,175,55,.18);border-radius:14px;backdrop-filter:blur(6px);}
+  .card-gold{background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.45);}
+  .h-title{font-family:'Noto Serif SC',serif;font-weight:900;letter-spacing:.04em;}
+  .h-num{font-family:'Noto Serif SC',serif;font-weight:900;background:linear-gradient(180deg,#fff8d8 0%,#d4af37 60%,#8a6a18 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.6),transparent);}
+  .glow{box-shadow:0 0 60px rgba(212,175,55,.15), inset 0 0 30px rgba(212,175,55,.05);}
+  /* page indicator */
+  .pager{position:fixed;right:22px;bottom:18px;font-family:'Noto Serif SC',serif;color:#d4af37;font-size:13px;letter-spacing:.2em;z-index:50;background:rgba(15,10,31,.6);border:1px solid rgba(212,175,55,.35);padding:6px 14px;border-radius:999px;}
+  .hint{position:fixed;left:22px;bottom:18px;font-size:11px;color:#8b80a8;z-index:50;letter-spacing:.1em;}
+  /* taiji spin */
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .spin-slow{animation:spin 60s linear infinite;}
+  .spin-rev{animation:spin 90s linear infinite reverse;}
+  /* clouds bg */
+  .bg-deco{position:absolute;inset:0;pointer-events:none;opacity:.18;}
+  /* tables */
+  table.kt{width:100%;border-collapse:collapse;font-size:13px;}
+  table.kt th, table.kt td{padding:10px 12px;border-bottom:1px solid rgba(212,175,55,.15);text-align:left;}
+  table.kt th{color:var(--gold2);font-weight:500;letter-spacing:.1em;font-size:12px;}
+  table.kt td.win{color:#ffe79a;}
+  table.kt tr:hover td{background:rgba(212,175,55,.04);}
+  .kbd{display:inline-block;padding:2px 8px;border:1px solid rgba(212,175,55,.4);border-radius:6px;color:#d4af37;font-size:11px;}
+  /* print */
+  @media print{
+    @page{size:A4 landscape;margin:0;}
+    html,body{overflow:visible;background:#0f0a1f;}
+    .deck{height:auto;width:auto;}
+    section.slide{position:relative;opacity:1!important;transform:none!important;page-break-after:always;width:297mm;height:210mm;padding:30px 50px;}
+    .pager,.hint{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- decorative SVG defs -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="taiji" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#d4af37" stroke-width="1.2"/>
+      <path d="M50 2 a48 48 0 0 1 0 96 a24 24 0 0 1 0 -48 a24 24 0 0 0 0 -48 z" fill="#d4af37" opacity=".85"/>
+      <circle cx="50" cy="26" r="5" fill="#0f0a1f"/>
+      <circle cx="50" cy="74" r="5" fill="#d4af37"/>
+    </symbol>
+    <symbol id="bagua" viewBox="0 0 120 120">
+      <g fill="none" stroke="#d4af37" stroke-width="1">
+        <circle cx="60" cy="60" r="58"/>
+        <circle cx="60" cy="60" r="42"/>
+        <g stroke-width="2">
+          <line x1="60" y1="4" x2="60" y2="22"/>
+          <line x1="60" y1="98" x2="60" y2="116"/>
+          <line x1="4" y1="60" x2="22" y2="60"/>
+          <line x1="98" y1="60" x2="116" y2="60"/>
+          <line x1="20" y1="20" x2="32" y2="32"/>
+          <line x1="88" y1="88" x2="100" y2="100"/>
+          <line x1="20" y1="100" x2="32" y2="88"/>
+          <line x1="88" y1="32" x2="100" y2="20"/>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="coin" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="28" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+      <rect x="22" y="22" width="16" height="16" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="cloud" viewBox="0 0 200 60">
+      <path d="M10 40 Q20 20 40 30 Q50 10 70 25 Q90 15 100 35 Q120 25 130 40 Q150 30 170 45 Q180 35 190 50" fill="none" stroke="#d4af37" stroke-width="1" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="deck" id="deck">
+
+<!-- SLIDE_1_COVER -->
+<section class="slide active" data-id="1">
+  <div class="hd">
+    <div class="brand">
+      <svg class="logo spin-slow"><use href="#taiji"/></svg>
+      <div>
+        <div class="pname serif">小六壬 AI · 玄机</div>
+        <div class="ptitle">XIAOLIUREN AI · ORACLE</div>
+      </div>
+    </div>
+    <div class="chip">CONFIDENTIAL · 路演专用</div>
+  </div>
+  <div class="flex-1 flex items-center justify-center relative">
+    <svg class="absolute spin-rev" style="width:520px;height:520px;opacity:.18"><use href="#bagua"/></svg>
+    <div class="relative text-center">
+      <div class="chip mb-6">全球首款 · 专业级小六壬 AI 占卜</div>
+      <h1 class="h-title text-7xl leading-tight">东方智慧 · <span class="h-num">AI 重塑</span></h1>
+      <h2 class="serif text-3xl mt-6 text-mist mist">中国大陆市场上线战略汇报</h2>
+      <div class="divider w-2/3 mx-auto my-8"></div>
+      <p class="serif text-xl gold2">「让千年智慧，触手可及」</p>
+      <div class="mt-10 flex items-center justify-center gap-10 text-sm">
+        <div><div class="text-xs text-gray-400 tracking-widest">距首发上线</div><div class="h-num text-4xl mt-1">30 <span class="text-lg gold">天</span></div></div>
+        <div class="w-px h-12 bg-yellow-700/40"></div>
+        <div><div class="text-xs text-gray-400 tracking-widest">首发平台</div><div class="serif text-2xl gold mt-1">微信小程序</div></div>
+        <div class="w-px h-12 bg-yellow-700/40"></div>
+        <div><div class="text-xs text-gray-400 tracking-widest">汇报对象</div><div class="serif text-2xl gold mt-1">投资人 / 战略层</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span class="conf">CONFIDENTIAL · 仅限内部</span><span>2025 · 玄机 AI 战略组</span></div>
+</section>
+
+<!-- SLIDE_2_VISION -->
+<section class="slide" data-id="2"><!-- PLACEHOLDER_2 --></section>
+
+<!-- SLIDE_3_POSITION -->
+<section class="slide" data-id="3"><!-- PLACEHOLDER_3 --></section>
+
+<!-- SLIDE_4_VALUE -->
+<section class="slide" data-id="4"><!-- PLACEHOLDER_4 --></section>
+
+<!-- SLIDE_5_PERSONA -->
+<section class="slide" data-id="5"><!-- PLACEHOLDER_5 --></section>
+
+<!-- SLIDE_6_MENTALHEALTH -->
+<section class="slide" data-id="6"><!-- PLACEHOLDER_6 --></section>
+
+<!-- SLIDE_7_MARKETSIZE -->
+<section class="slide" data-id="7"><!-- PLACEHOLDER_7 --></section>
+
+<!-- SLIDE_8_GUOCHAO -->
+<section class="slide" data-id="8"><!-- PLACEHOLDER_8 --></section>
+
+<!-- SLIDE_9_COMPETITION -->
+<section class="slide" data-id="9"><!-- PLACEHOLDER_9 --></section>
+
+<!-- SLIDE_10_PRODUCT_KNOWLEDGE -->
+<section class="slide" data-id="10"><!-- PLACEHOLDER_10 --></section>
+
+<!-- SLIDE_11_FEATURES -->
+<section class="slide" data-id="11"><!-- PLACEHOLDER_11 --></section>
+
+<!-- SLIDE_12_VS_LLM -->
+<section class="slide" data-id="12"><!-- PLACEHOLDER_12 --></section>
+
+<!-- SLIDE_13_VS_HUMAN -->
+<section class="slide" data-id="13"><!-- PLACEHOLDER_13 --></section>
+
+<!-- SLIDE_14_UNIT_ECON -->
+<section class="slide" data-id="14"><!-- PLACEHOLDER_14 --></section>
+
+<!-- SLIDE_15_REVENUE -->
+<section class="slide" data-id="15"><!-- PLACEHOLDER_15 --></section>
+
+<!-- SLIDE_16_MONETIZE -->
+<section class="slide" data-id="16"><!-- PLACEHOLDER_16 --></section>
+
+<!-- SLIDE_17_GTM -->
+<section class="slide" data-id="17"><!-- PLACEHOLDER_17 --></section>
+
+<!-- SLIDE_18_CHANNEL -->
+<section class="slide" data-id="18"><!-- PLACEHOLDER_18 --></section>
+
+<!-- SLIDE_19_COMPLIANCE -->
+<section class="slide" data-id="19"><!-- PLACEHOLDER_19 --></section>
+
+<!-- SLIDE_20_MOAT -->
+<section class="slide" data-id="20"><!-- PLACEHOLDER_20 --></section>
+
+<!-- SLIDE_21_ROADMAP -->
+<section class="slide" data-id="21"><!-- PLACEHOLDER_21 --></section>
+
+<!-- SLIDE_22_TEAM_ASK -->
+<section class="slide" data-id="22"><!-- PLACEHOLDER_22 --></section>
+
+</div>
+
+<div class="pager"><span id="cur">1</span> / <span id="tot">22</span></div>
+<div class="hint">← → 翻页 · 滚轮浏览 · <span class="kbd">Ctrl/⌘ + P</span> 导出 PDF（A4 横向）</div>
+
+<script>
+  const slides=[...document.querySelectorAll('section.slide')];
+  let idx=0;
+  document.getElementById('tot').textContent=slides.length;
+  function go(i){
+    idx=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach((s,n)=>s.classList.toggle('active',n===idx));
+    document.getElementById('cur').textContent=idx+1;
+    // trigger chart render hooks if any
+    if(window.__chartHooks && window.__chartHooks[idx]) window.__chartHooks[idx]();
+  }
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ') go(idx+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp') go(idx-1);
+    if(e.key==='Home') go(0);
+    if(e.key==='End') go(slides.length-1);
+  });
+  let wheelLock=false;
+  window.addEventListener('wheel',e=>{
+    if(wheelLock) return;
+    wheelLock=true;setTimeout(()=>wheelLock=false,650);
+    if(e.deltaY>10) go(idx+1); else if(e.deltaY<-10) go(idx-1);
+  },{passive:true});
+  window.__chartHooks={};
+</script>
+
+</body>
+</html>
