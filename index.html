@@ -12,44 +12,42 @@
   html,body{margin:0;padding:0;background:#000;color:#fff;font-family:'Noto Sans SC',system-ui,sans-serif;overflow:hidden;}
   .serif{font-family:'Noto Serif SC',serif;}
   .deck{width:100vw;height:100vh;position:relative;}
-  section.slide{position:absolute;inset:0;width:100%;height:100%;background:radial-gradient(ellipse at top,#241445 0%,#0f0a1f 55%,#06030f 100%);display:flex;flex-direction:column;padding:48px 72px 56px 72px;box-sizing:border-box;opacity:0;pointer-events:none;transform:translateX(40px);transition:opacity .55s ease, transform .55s ease;overflow:hidden;}
+  section.slide{position:absolute;inset:0;width:100%;height:100%;background:radial-gradient(ellipse at top,#241445 0%,#0f0a1f 55%,#06030f 100%);display:flex;flex-direction:column;padding:42px 64px 50px 64px;box-sizing:border-box;opacity:0;pointer-events:none;transform:translateX(40px);transition:opacity .55s ease, transform .55s ease;overflow:hidden;}
   section.slide.active{opacity:1;pointer-events:auto;transform:translateX(0);}
-  .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,175,55,.25);padding-bottom:14px;}
+  .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,175,55,.25);padding-bottom:12px;}
   .hd .brand{display:flex;align-items:center;gap:12px;}
-  .hd .logo{width:34px;height:34px;}
-  .hd .pname{font-size:14px;letter-spacing:.18em;color:var(--gold2);}
-  .hd .ptitle{font-size:13px;color:#cfc6e8;letter-spacing:.1em;}
+  .hd .logo{width:32px;height:32px;}
+  .hd .pname{font-size:13px;letter-spacing:.18em;color:var(--gold2);}
+  .hd .ptitle{font-size:12px;color:#cfc6e8;letter-spacing:.1em;}
   .ft{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8b80a8;letter-spacing:.12em;border-top:1px solid rgba(212,175,55,.15);padding-top:10px;margin-top:auto;}
   .ft .conf{color:#d4af37aa;}
   .gold{color:var(--gold);} .gold2{color:var(--gold2);} .mist{color:var(--mist);}
-  .chip{display:inline-block;padding:4px 12px;border:1px solid rgba(212,175,55,.5);border-radius:999px;color:var(--gold2);font-size:12px;letter-spacing:.18em;}
+  .chip{display:inline-block;padding:4px 12px;border:1px solid rgba(212,175,55,.5);border-radius:999px;color:var(--gold2);font-size:11px;letter-spacing:.18em;}
   .card{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(212,175,55,.18);border-radius:14px;backdrop-filter:blur(6px);}
   .card-gold{background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.45);}
   .h-title{font-family:'Noto Serif SC',serif;font-weight:900;letter-spacing:.04em;}
   .h-num{font-family:'Noto Serif SC',serif;font-weight:900;background:linear-gradient(180deg,#fff8d8 0%,#d4af37 60%,#8a6a18 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
   .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.6),transparent);}
-  .glow{box-shadow:0 0 60px rgba(212,175,55,.15), inset 0 0 30px rgba(212,175,55,.05);}
   .pager{position:fixed;right:22px;bottom:18px;font-family:'Noto Serif SC',serif;color:#d4af37;font-size:13px;letter-spacing:.2em;z-index:50;background:rgba(15,10,31,.6);border:1px solid rgba(212,175,55,.35);padding:6px 14px;border-radius:999px;}
   .hint{position:fixed;left:22px;bottom:18px;font-size:11px;color:#8b80a8;z-index:50;letter-spacing:.1em;}
   @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
   .spin-slow{animation:spin 60s linear infinite;}
   .spin-rev{animation:spin 90s linear infinite reverse;}
-  .bg-deco{position:absolute;inset:0;pointer-events:none;opacity:.18;}
-  table.kt{width:100%;border-collapse:collapse;font-size:13px;}
-  table.kt th, table.kt td{padding:10px 12px;border-bottom:1px solid rgba(212,175,55,.15);text-align:left;}
-  table.kt th{color:var(--gold2);font-weight:500;letter-spacing:.1em;font-size:12px;}
-  table.kt td.win{color:#ffe79a;}
-  table.kt tr:hover td{background:rgba(212,175,55,.04);}
+  table.kt{width:100%;border-collapse:collapse;font-size:12.5px;}
+  table.kt th, table.kt td{padding:9px 10px;border-bottom:1px solid rgba(212,175,55,.15);text-align:left;}
+  table.kt th{color:var(--gold2);font-weight:500;letter-spacing:.08em;font-size:11.5px;}
+  table.kt td.win{color:#ffe79a;font-weight:500;}
+  table.kt td.lose{color:#a99dba;}
   .kbd{display:inline-block;padding:2px 8px;border:1px solid rgba(212,175,55,.4);border-radius:6px;color:#d4af37;font-size:11px;}
-  .pageHd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
-  .pageHd .ttl{font-family:'Noto Serif SC',serif;font-size:26px;font-weight:700;color:#fff;}
-  .pageHd .ttl .sub{display:block;font-family:'Noto Sans SC';font-size:12px;color:#9b8fc2;letter-spacing:.3em;margin-top:4px;font-weight:400;}
-  .chap{font-family:'Noto Serif SC',serif;color:#d4af37;font-size:13px;letter-spacing:.4em;}
+  .pageHd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;margin-top:14px;}
+  .pageHd .ttl{font-family:'Noto Serif SC',serif;font-size:24px;font-weight:700;color:#fff;}
+  .pageHd .ttl .sub{display:block;font-family:'Noto Sans SC';font-size:11px;color:#9b8fc2;letter-spacing:.3em;margin-top:3px;font-weight:400;}
+  .chap{font-family:'Noto Serif SC',serif;color:#d4af37;font-size:12px;letter-spacing:.4em;}
   @media print{
     @page{size:A4 landscape;margin:0;}
     html,body{overflow:visible;background:#0f0a1f;}
     .deck{height:auto;width:auto;}
-    section.slide{position:relative;opacity:1!important;transform:none!important;page-break-after:always;width:297mm;height:210mm;padding:30px 50px;}
+    section.slide{position:relative;opacity:1!important;transform:none!important;page-break-after:always;width:297mm;height:210mm;padding:24px 40px;}
     .pager,.hint{display:none;}
   }
 </style>
@@ -66,64 +64,25 @@
     </symbol>
     <symbol id="bagua" viewBox="0 0 120 120">
       <g fill="none" stroke="#d4af37" stroke-width="1">
-        <circle cx="60" cy="60" r="58"/>
-        <circle cx="60" cy="60" r="42"/>
-        <g stroke-width="2">
-          <line x1="60" y1="4" x2="60" y2="22"/>
-          <line x1="60" y1="98" x2="60" y2="116"/>
-          <line x1="4" y1="60" x2="22" y2="60"/>
-          <line x1="98" y1="60" x2="116" y2="60"/>
-          <line x1="20" y1="20" x2="32" y2="32"/>
-          <line x1="88" y1="88" x2="100" y2="100"/>
-          <line x1="20" y1="100" x2="32" y2="88"/>
-          <line x1="88" y1="32" x2="100" y2="20"/>
-        </g>
+        <circle cx="60" cy="60" r="58"/><circle cx="60" cy="60" r="42"/>
+        <g stroke-width="2"><line x1="60" y1="4" x2="60" y2="22"/><line x1="60" y1="98" x2="60" y2="116"/><line x1="4" y1="60" x2="22" y2="60"/><line x1="98" y1="60" x2="116" y2="60"/><line x1="20" y1="20" x2="32" y2="32"/><line x1="88" y1="88" x2="100" y2="100"/><line x1="20" y1="100" x2="32" y2="88"/><line x1="88" y1="32" x2="100" y2="20"/></g>
       </g>
     </symbol>
-    <symbol id="coin" viewBox="0 0 60 60">
-      <circle cx="30" cy="30" r="28" fill="none" stroke="#d4af37" stroke-width="1.5"/>
-      <rect x="22" y="22" width="16" height="16" fill="none" stroke="#d4af37" stroke-width="1.5"/>
-    </symbol>
-    <symbol id="cloud" viewBox="0 0 200 60">
-      <path d="M10 40 Q20 20 40 30 Q50 10 70 25 Q90 15 100 35 Q120 25 130 40 Q150 30 170 45 Q180 35 190 50" fill="none" stroke="#d4af37" stroke-width="1" opacity=".6"/>
-    </symbol>
-    <symbol id="hd-tpl" viewBox="0 0 100 20"></symbol>
+    <symbol id="coin" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="none" stroke="#d4af37" stroke-width="1.5"/><rect x="22" y="22" width="16" height="16" fill="none" stroke="#d4af37" stroke-width="1.5"/></symbol>
   </defs>
 </svg>
 
-<template id="header-tpl">
-  <div class="hd">
-    <div class="brand">
-      <svg class="logo spin-slow"><use href="#taiji"/></svg>
-      <div>
-        <div class="pname serif">小六壬 AI · 玄机</div>
-        <div class="ptitle">XIAOLIUREN AI · ORACLE</div>
-      </div>
-    </div>
-    <div class="chip">中国大陆上线战略 · 2025</div>
-  </div>
-</template>
-
 <div class="deck" id="deck">
 
-<!-- SLIDE 1 COVER -->
+<!-- ============ SLIDE 1 COVER ============ -->
 <section class="slide active" data-id="1">
-  <div class="hd">
-    <div class="brand">
-      <svg class="logo spin-slow"><use href="#taiji"/></svg>
-      <div>
-        <div class="pname serif">小六壬 AI · 玄机</div>
-        <div class="ptitle">XIAOLIUREN AI · ORACLE</div>
-      </div>
-    </div>
-    <div class="chip">CONFIDENTIAL · 路演专用</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">XIAOLIUREN AI · ORACLE</div></div></div><div class="chip">CONFIDENTIAL · 路演专用</div></div>
   <div class="flex-1 flex items-center justify-center relative">
     <svg class="absolute spin-rev" style="width:520px;height:520px;opacity:.18"><use href="#bagua"/></svg>
     <div class="relative text-center">
       <div class="chip mb-6">全球首款 · 专业级小六壬 AI 占卜</div>
       <h1 class="h-title text-7xl leading-tight">东方智慧 · <span class="h-num">AI 重塑</span></h1>
-      <h2 class="serif text-3xl mt-6 text-mist mist">中国大陆市场上线战略汇报</h2>
+      <h2 class="serif text-3xl mt-6 mist">中国大陆市场上线战略汇报</h2>
       <div class="divider w-2/3 mx-auto my-8"></div>
       <p class="serif text-xl gold2">「让千年智慧，触手可及」</p>
       <div class="mt-10 flex items-center justify-center gap-10 text-sm">
@@ -138,16 +97,10 @@
   <div class="ft"><span class="conf">CONFIDENTIAL · 仅限内部</span><span>2025 · 玄机 AI 战略组</span></div>
 </section>
 
-<!-- SLIDE 2 VISION -->
+<!-- ============ SLIDE 2 VISION ============ -->
 <section class="slide" data-id="2">
-  <div class="hd">
-    <div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第一章 · 愿景与使命</div></div></div>
-    <div class="chip">VISION</div>
-  </div>
-  <div class="pageHd mt-6">
-    <div><div class="chap">CHAPTER 01</div><div class="ttl">一句话愿景<span class="sub">ONE-LINE VISION</span></div></div>
-    <div class="text-right text-xs text-gray-400 tracking-widest">P.02</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第一章 · 愿景与使命</div></div></div><div class="chip">VISION</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 01</div><div class="ttl">一句话愿景<span class="sub">ONE-LINE VISION</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.02</div></div>
   <div class="flex-1 grid grid-cols-12 gap-6 items-center">
     <div class="col-span-7 relative">
       <svg class="absolute spin-slow opacity-10 -left-10 top-0" style="width:340px;height:340px"><use href="#bagua"/></svg>
@@ -155,28 +108,22 @@
         <p class="serif text-2xl mist mb-3">我们要做的事 ——</p>
         <h2 class="h-title text-5xl leading-snug">用 <span class="h-num">AI</span> 重新讲述<br/>中国人自己的<span class="gold">「心灵语言」</span></h2>
         <div class="divider my-6 w-2/3"></div>
-        <p class="serif text-lg leading-loose text-gray-200">让千年小六壬智慧 <span class="gold">从师傅口中 → 走入 14 亿人手机</span>；<br/>让每一次焦虑、迷茫、emo 的瞬间，<br/>都能在 <span class="gold2">3 秒钟</span> 内得到一句<span class="gold2">温柔而专业</span>的回应。</p>
+        <p class="serif text-base leading-loose text-gray-200">让千年小六壬智慧 <span class="gold">从师傅口中 → 走入 14 亿人手机</span>；<br/>让每一次焦虑、迷茫、emo 的瞬间，<br/>都能在 <span class="gold2">3 秒</span> 内得到一句<span class="gold2">温柔而专业</span>的回应。</p>
       </div>
     </div>
-    <div class="col-span-5 grid grid-cols-1 gap-3">
+    <div class="col-span-5 grid gap-3">
       <div class="card-gold p-5"><div class="text-xs gold2 tracking-widest">FOR USER · 对用户</div><div class="serif text-xl mt-2">东方版「电子木鱼 + AI 树洞」</div><div class="text-sm text-gray-300 mt-1">轻量解压 · 即时陪伴 · 文化共鸣</div></div>
       <div class="card p-5"><div class="text-xs gold2 tracking-widest">FOR INDUSTRY · 对行业</div><div class="serif text-xl mt-2">国学 AI 化的标杆产品</div><div class="text-sm text-gray-300 mt-1">用合规、专业、高毛利重新定义赛道</div></div>
-      <div class="card p-5"><div class="text-xs gold2 tracking-widest">FOR CULTURE · 对文化</div><div class="serif text-xl mt-2">让传统文化年轻化 · 出海化</div><div class="text-sm text-gray-300 mt-1">从大陆首发，走向全球华人</div></div>
+      <div class="card p-5"><div class="text-xs gold2 tracking-widest">FOR CULTURE · 对文化</div><div class="serif text-xl mt-2">传统文化年轻化 · 出海化</div><div class="text-sm text-gray-300 mt-1">从大陆首发，走向全球华人</div></div>
     </div>
   </div>
   <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>2 / 22</span></div>
 </section>
 
-<!-- SLIDE 3 POSITION -->
+<!-- ============ SLIDE 3 POSITION ============ -->
 <section class="slide" data-id="3">
-  <div class="hd">
-    <div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 产品定位</div></div></div>
-    <div class="chip">POSITIONING</div>
-  </div>
-  <div class="pageHd mt-6">
-    <div><div class="chap">CHAPTER 02</div><div class="ttl">合规话术下的产品定位<span class="sub">POSITIONING UNDER COMPLIANCE</span></div></div>
-    <div class="text-right text-xs text-gray-400 tracking-widest">P.03</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 产品定位</div></div></div><div class="chip">POSITIONING</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 02</div><div class="ttl">合规话术下的产品定位<span class="sub">POSITIONING UNDER COMPLIANCE</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.03</div></div>
   <div class="flex-1 grid grid-cols-12 gap-5">
     <div class="col-span-7 card p-6">
       <div class="text-xs gold2 tracking-widest">官方对外口径 · 一句话讲清楚</div>
@@ -189,7 +136,7 @@
       </div>
       <div class="mt-4 text-xs text-gray-400">所有用户触点（应用名、Slogan、详情页、客服话术）必须统一口径，由合规组每月抽检。</div>
     </div>
-    <div class="col-span-5 grid gap-4">
+    <div class="col-span-5 grid gap-3">
       <div class="card p-4"><div class="flex items-baseline gap-2"><span class="h-num text-3xl">01</span><span class="serif text-xl">文化性</span></div><div class="text-sm text-gray-300 mt-1">小六壬源自三国诸葛亮，1700 年传承；与《易经》《道德经》同根同源，是<span class="gold2">中华非遗级文化资产</span>。</div></div>
       <div class="card p-4"><div class="flex items-baseline gap-2"><span class="h-num text-3xl">02</span><span class="serif text-xl">情绪价值</span></div><div class="text-sm text-gray-300 mt-1">不是给"答案"，而是给"接纳"。<span class="gold2">AI 多轮追问 + 共情对话</span>，比心理咨询更轻、比朋友圈更私密。</div></div>
       <div class="card p-4"><div class="flex items-baseline gap-2"><span class="h-num text-3xl">03</span><span class="serif text-xl">娱乐性</span></div><div class="text-sm text-gray-300 mt-1">3 秒成卦、可视化卦象、可分享海报；<span class="gold2">轻量解压</span>，对标"电子木鱼""每日塔罗"。</div></div>
@@ -198,23 +145,14 @@
   <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>3 / 22</span></div>
 </section>
 
-<!-- SLIDE 4 VALUE -->
+<!-- ============ SLIDE 4 VALUE RADAR ============ -->
 <section class="slide" data-id="4">
-  <div class="hd">
-    <div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 三大核心价值</div></div></div>
-    <div class="chip">CORE VALUE</div>
-  </div>
-  <div class="pageHd mt-6">
-    <div><div class="chap">CHAPTER 02</div><div class="ttl">三大核心价值 · 雷达图<span class="sub">CULTURE × EMOTION × ENTERTAINMENT</span></div></div>
-    <div class="text-right text-xs text-gray-400 tracking-widest">P.04</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 三大核心价值</div></div></div><div class="chip">CORE VALUE</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 02</div><div class="ttl">三大核心价值 · 雷达图<span class="sub">CULTURE × EMOTION × ENTERTAINMENT</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.04</div></div>
   <div class="flex-1 grid grid-cols-12 gap-6">
     <div class="col-span-6 card p-4 flex items-center justify-center"><canvas id="ch4" style="max-height:380px"></canvas></div>
     <div class="col-span-6 grid gap-4 content-center">
-      <div class="card-gold p-5">
-        <div class="serif text-2xl gold2">为什么用户离不开？</div>
-        <p class="text-sm text-gray-200 mt-2 leading-relaxed">用户对玄学/心理类产品的真实需求，从来不是"求一个准确答案"，而是 ——<br/><span class="gold">「在不被评判的角落，被认真对待一次」</span>。我们用 AI 把这件事的<span class="gold2">成本压到 3.5 元、响应压到 3 秒、隐私压到匿名</span>。</p>
-      </div>
+      <div class="card-gold p-5"><div class="serif text-2xl gold2">为什么用户离不开？</div><p class="text-sm text-gray-200 mt-2 leading-relaxed">用户对玄学/心理类产品的真实需求，从来不是"求一个准确答案"，而是 ——<br/><span class="gold">「在不被评判的角落，被认真对待一次」</span>。我们用 AI 把这件事的<span class="gold2">成本压到 3.5 元、响应压到 3 秒、隐私压到匿名</span>。</p></div>
       <div class="grid grid-cols-3 gap-3 text-center">
         <div class="card p-4"><div class="h-num text-3xl">96<span class="text-base gold">%</span></div><div class="text-xs text-gray-300 mt-1">毛利率</div></div>
         <div class="card p-4"><div class="h-num text-3xl">3<span class="text-base gold">秒</span></div><div class="text-xs text-gray-300 mt-1">出卦响应</div></div>
@@ -225,16 +163,10 @@
   <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>4 / 22</span></div>
 </section>
 
-<!-- SLIDE 5 PERSONA -->
+<!-- ============ SLIDE 5 PERSONA ============ -->
 <section class="slide" data-id="5">
-  <div class="hd">
-    <div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 用户画像</div></div></div>
-    <div class="chip">USER PERSONA</div>
-  </div>
-  <div class="pageHd mt-6">
-    <div><div class="chap">CHAPTER 02</div><div class="ttl">四类核心用户画像<span class="sub">FOUR CORE PERSONAS</span></div></div>
-    <div class="text-right text-xs text-gray-400 tracking-widest">P.05</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第二章 · 用户画像</div></div></div><div class="chip">USER PERSONA</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 02</div><div class="ttl">四类核心用户画像<span class="sub">FOUR CORE PERSONAS</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.05</div></div>
   <div class="flex-1 grid grid-cols-4 gap-4">
     <div class="card p-5 flex flex-col">
       <div class="flex items-center justify-between"><div class="h-num text-2xl">35%</div><div class="chip">主力</div></div>
@@ -242,10 +174,7 @@
       <div class="text-xs text-gray-400 mt-1">18–26 岁 · 在校 / 初入职场</div>
       <div class="divider my-3"></div>
       <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed">
-        <li>• MBTI / 星座 / 塔罗重度玩家</li>
-        <li>• 情感问题、考研、求职焦虑</li>
-        <li>• 客单价低、留存高、传播强</li>
-        <li>• 触点：小红书 · B 站 · 抖音</li>
+        <li>• MBTI / 星座 / 塔罗重度玩家</li><li>• 情感、考研、求职焦虑</li><li>• 客单价低、留存高、传播强</li><li>• 触点：小红书 · B 站 · 抖音</li>
       </ul>
       <div class="mt-auto pt-3 text-xs gold">ARPPU ¥38 / 月</div>
     </div>
@@ -255,10 +184,7 @@
       <div class="text-xs text-gray-400 mt-1">26–38 岁 · 一线 / 新一线</div>
       <div class="divider my-3"></div>
       <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed">
-        <li>• 事业 / 跳槽 / 投资决策</li>
-        <li>• 月入 1–3 万，付费意愿强</li>
-        <li>• 看重隐私、匿名、专业感</li>
-        <li>• 触点：知乎 · 公众号 · 视频号</li>
+        <li>• 事业 / 跳槽 / 投资决策</li><li>• 月入 1–3 万，付费意愿强</li><li>• 看重隐私、匿名、专业感</li><li>• 触点：知乎 · 公众号 · 视频号</li>
       </ul>
       <div class="mt-auto pt-3 text-xs gold">ARPPU ¥128 / 月</div>
     </div>
@@ -268,10 +194,7 @@
       <div class="text-xs text-gray-400 mt-1">28–42 岁 · 已育 · 中产</div>
       <div class="divider my-3"></div>
       <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed">
-        <li>• 子女教育 · 婚姻 · 健康陪伴</li>
-        <li>• 微信生态停留时长最长</li>
-        <li>• 社群裂变能力极强</li>
-        <li>• 触点：朋友圈 · 私域 · 视频号</li>
+        <li>• 子女教育 · 婚姻 · 健康</li><li>• 微信生态停留时长最长</li><li>• 社群裂变能力极强</li><li>• 触点：朋友圈 · 私域 · 视频号</li>
       </ul>
       <div class="mt-auto pt-3 text-xs gold">ARPPU ¥85 / 月</div>
     </div>
@@ -281,10 +204,7 @@
       <div class="text-xs text-gray-400 mt-1">45–65 岁 · 三四五线</div>
       <div class="divider my-3"></div>
       <ul class="text-xs text-gray-300 space-y-1.5 leading-relaxed">
-        <li>• 对国学、易经天然信任</li>
-        <li>• 抖音 / 快手 重度用户</li>
-        <li>• 客单中等、退费率低</li>
-        <li>• 触点：抖音直播 · 视频号</li>
+        <li>• 对国学、易经天然信任</li><li>• 抖音 / 快手 重度用户</li><li>• 客单中等、退费率低</li><li>• 触点：抖音直播 · 视频号</li>
       </ul>
       <div class="mt-auto pt-3 text-xs gold">ARPPU ¥56 / 月</div>
     </div>
@@ -292,16 +212,10 @@
   <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>5 / 22</span></div>
 </section>
 
-<!-- SLIDE 6 MENTAL HEALTH -->
+<!-- ============ SLIDE 6 MENTAL HEALTH ============ -->
 <section class="slide" data-id="6">
-  <div class="hd">
-    <div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第三章 · 中国市场机会</div></div></div>
-    <div class="chip">MARKET OPPORTUNITY</div>
-  </div>
-  <div class="pageHd mt-6">
-    <div><div class="chap">CHAPTER 03</div><div class="ttl">中国心理健康现状 · 巨大未被满足的需求<span class="sub">MENTAL HEALTH IN CHINA</span></div></div>
-    <div class="text-right text-xs text-gray-400 tracking-widest">P.06</div>
-  </div>
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第三章 · 中国市场机会</div></div></div><div class="chip">MARKET</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 03</div><div class="ttl">中国心理健康现状 · 巨大未被满足的需求<span class="sub">MENTAL HEALTH IN CHINA</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.06</div></div>
   <div class="flex-1 grid grid-cols-12 gap-5">
     <div class="col-span-7 card p-5"><canvas id="ch6" style="max-height:340px"></canvas></div>
     <div class="col-span-5 grid gap-3">
@@ -314,37 +228,140 @@
   <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>6 / 22</span></div>
 </section>
 
-<!-- SLIDE 7 MARKET SIZE -->
-<section class="slide" data-id="7"><!-- PLACEHOLDER_7 --></section>
-<!-- SLIDE 8 GUOCHAO -->
-<section class="slide" data-id="8"><!-- PLACEHOLDER_8 --></section>
-<!-- SLIDE 9 COMPETITION -->
-<section class="slide" data-id="9"><!-- PLACEHOLDER_9 --></section>
-<!-- SLIDE 10 -->
-<section class="slide" data-id="10"><!-- PLACEHOLDER_10 --></section>
-<!-- SLIDE 11 -->
-<section class="slide" data-id="11"><!-- PLACEHOLDER_11 --></section>
-<!-- SLIDE 12 -->
+<!-- ============ SLIDE 7 MARKET SIZE ============ -->
+<section class="slide" data-id="7">
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第三章 · 国学 / 玄学经济</div></div></div><div class="chip">MARKET SIZE</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 03</div><div class="ttl">泛玄学经济：被低估的千亿赛道<span class="sub">CHINA OCCULT / GUOXUE ECONOMY</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.07</div></div>
+  <div class="flex-1 grid grid-cols-12 gap-5">
+    <div class="col-span-5 grid gap-3">
+      <div class="card-gold p-5"><div class="text-xs gold2 tracking-widest">中国泛玄学市场规模 (2024)</div><div class="h-num text-5xl mt-1">¥1,200<span class="text-xl gold"> 亿</span></div><div class="text-xs text-gray-300 mt-1">含线下命理、塔罗、玄学 App、直播打赏</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">Z 世代年人均"玄学消费"</div><div class="h-num text-3xl mt-1">¥4,000<span class="text-base gold">+</span></div><div class="text-xs text-gray-300 mt-1">来源：后浪研究所 / 艾媒咨询 2024</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">知识付费市场 (2024)</div><div class="h-num text-3xl mt-1">¥1,800<span class="text-base gold"> 亿</span></div><div class="text-xs text-gray-300 mt-1">小程序 / 知乎盐选 / 得到 / 喜马拉雅</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">在线心理服务市场 (2025E)</div><div class="h-num text-3xl mt-1">¥600<span class="text-base gold"> 亿</span></div><div class="text-xs text-gray-300 mt-1">CAGR 约 25%，AI 心理是最大变量</div></div>
+    </div>
+    <div class="col-span-7 card p-5"><canvas id="ch7" style="max-height:380px"></canvas></div>
+  </div>
+  <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>7 / 22</span></div>
+</section>
+
+<!-- ============ SLIDE 8 GUOCHAO ============ -->
+<section class="slide" data-id="8">
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第三章 · 国潮文化复兴</div></div></div><div class="chip">CULTURAL TAILWIND</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 03</div><div class="ttl">文化复兴红利：国潮 + 易经 + Z 世代<span class="sub">GUOCHAO TAILWIND</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.08</div></div>
+  <div class="flex-1 grid grid-cols-12 gap-5">
+    <div class="col-span-7 card p-5"><canvas id="ch8" style="max-height:380px"></canvas></div>
+    <div class="col-span-5 grid gap-3">
+      <div class="card-gold p-4"><div class="text-xs gold2 tracking-widest">B 站《周易》相关视频累计播放</div><div class="h-num text-3xl mt-1">12 <span class="text-base gold">亿+</span></div><div class="text-xs text-gray-300 mt-1">"易经入门"单条最高 580 万播放</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">小红书 #玄学话题笔记</div><div class="h-num text-3xl mt-1">580 <span class="text-base gold">万</span></div><div class="text-xs text-gray-300 mt-1">总浏览 130 亿，年增速 220%</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">抖音 #国学 / #玄学话题</div><div class="h-num text-3xl mt-1">2,400 <span class="text-base gold">亿</span></div><div class="text-xs text-gray-300 mt-1">话题播放总量；玄学直播间日均 200 万人</div></div>
+      <div class="card p-4"><div class="text-xs gold2 tracking-widest">知乎"小六壬"搜索量同比</div><div class="h-num text-3xl mt-1">+ 318 <span class="text-base gold">%</span></div><div class="text-xs text-gray-300 mt-1">2023 → 2024，热度持续走高</div></div>
+    </div>
+  </div>
+  <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>8 / 22</span></div>
+</section>
+
+<!-- ============ SLIDE 9 COMPETITION ============ -->
+<section class="slide" data-id="9">
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第三章 · 竞争格局</div></div></div><div class="chip">COMPETITIVE LANDSCAPE</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 03</div><div class="ttl">国内竞争格局 · 我们的差异化卡位<span class="sub">COMPETITIVE LANDSCAPE</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.09</div></div>
+  <div class="flex-1 grid grid-cols-12 gap-5">
+    <div class="col-span-12 card p-4 overflow-auto">
+      <table class="kt">
+        <thead><tr><th>玩家</th><th>形态</th><th>核心服务</th><th>客单 / ARPPU</th><th>合规度</th><th>AI 化</th><th>对我们的威胁</th></tr></thead>
+        <tbody>
+          <tr><td class="win">玄机 AI（我们）</td><td>小程序 + App</td><td class="win">小六壬 AI · 多轮追问 · 情绪陪伴</td><td class="win">¥3.5 / 次 · ¥19.9–169 会员</td><td class="win">高 · 已备案</td><td class="win">垂直自研</td><td>—</td></tr>
+          <tr><td>问问 App</td><td>App</td><td class="lose">真人塔罗师 1V1</td><td class="lose">¥15 / 分钟（约 ¥150 / 单）</td><td>中</td><td class="lose">无</td><td>价格高 4 倍，下沉受限</td></tr>
+          <tr><td>测测 App</td><td>App + 小程序</td><td>星座 / 塔罗 / MBTI 工具集</td><td>¥6–98</td><td>中</td><td class="lose">弱（规则化）</td><td>用户重叠，但无小六壬深度</td></tr>
+          <tr><td>随身易经 / 国学日历</td><td>工具型 App</td><td class="lose">每日运势 / 万年历</td><td class="lose">广告 + ¥30 包年</td><td>高</td><td class="lose">无</td><td>留存高但变现弱</td></tr>
+          <tr><td>Soul · 玄学板块</td><td>社区 App</td><td>UGC 玄学话题 + 真人匹配</td><td>陪聊抽成</td><td>中</td><td class="lose">无</td><td>社交流量大，但非垂直</td></tr>
+          <tr><td>抖音玄学直播</td><td>直播 + 小店</td><td class="lose">真人大师答疑 / 转运商品</td><td class="lose">¥50–500（打赏）</td><td>低 · 频繁封禁</td><td class="lose">无</td><td>流量大但合规风险高</td></tr>
+          <tr><td>知乎盐选玄学专栏</td><td>知识付费</td><td>长文 / 课程</td><td>¥99–199</td><td>高</td><td class="lose">无</td><td>付费用户高质量，可转化</td></tr>
+          <tr><td>豆包 / 文心 / Kimi</td><td>通用大模型</td><td>泛聊天，可顺带占卜</td><td>免费 / 会员</td><td>高</td><td>通用</td><td>体验浅、无文化深度</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>9 / 22</span></div>
+</section>
+
+<!-- ============ SLIDE 10 PRODUCT KNOWLEDGE ============ -->
+<section class="slide" data-id="10">
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第四章 · 产品力</div></div></div><div class="chip">PRODUCT</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 04</div><div class="ttl">先讲清楚：什么是「小六壬」<span class="sub">WHAT IS XIAOLIUREN</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.10</div></div>
+  <div class="flex-1 grid grid-cols-12 gap-5">
+    <div class="col-span-5 card p-5 relative overflow-hidden">
+      <svg class="absolute right-2 top-2 opacity-20" style="width:160px;height:160px"><use href="#bagua"/></svg>
+      <div class="text-xs gold2 tracking-widest">XIAOLIUREN · 小六壬</div>
+      <h3 class="serif text-3xl mt-2 gold">指尖上的诸葛神算</h3>
+      <div class="divider my-4"></div>
+      <p class="text-sm text-gray-200 leading-relaxed">小六壬 = 「<span class="gold2">大安·留连·速喜·赤口·小吉·空亡</span>」六宫；以三组数字起卦，是<span class="gold2">中国古代最轻量、最快速</span>的占卜体系。<br/><br/>由<span class="gold">三国诸葛亮</span>简化于大六壬，传至民间 1700 年，是<span class="gold">非物质文化遗产</span>体系下的国学瑰宝。</p>
+    </div>
+    <div class="col-span-7 card p-4 overflow-hidden">
+      <div class="text-xs gold2 tracking-widest mb-2">小六壬 vs 同类玄学体系</div>
+      <table class="kt">
+        <thead><tr><th>体系</th><th>起卦门槛</th><th>体验时长</th><th>文化属性</th><th>适合 AI 化</th></tr></thead>
+        <tbody>
+          <tr><td class="win">小六壬</td><td class="win">3 个数字，30 秒</td><td class="win">1–3 分钟</td><td class="win">中国本土国学</td><td class="win">★★★★★ 极适合</td></tr>
+          <tr><td>大六壬</td><td class="lose">需排盘 · 30 分钟</td><td>30+ 分钟</td><td>中国本土国学</td><td>★★ 复杂</td></tr>
+          <tr><td>六爻 / 梅花易数</td><td class="lose">铜钱 / 时辰起卦</td><td>10–30 分钟</td><td>中国本土国学</td><td>★★★ 中等</td></tr>
+          <tr><td>塔罗</td><td>洗牌 · 牌阵</td><td>5–15 分钟</td><td class="lose">西方文化</td><td>★★★★ 适合</td></tr>
+          <tr><td>星座 / MBTI</td><td>生日 / 答题</td><td>1 分钟</td><td class="lose">西方文化</td><td>★★★ 工具化</td></tr>
+        </tbody>
+      </table>
+      <div class="mt-3 text-xs text-gray-400">小六壬 = <span class="gold2">最低门槛 + 中国本土文化 + AI 化天然适配</span> → 黄金赛道。</div>
+    </div>
+  </div>
+  <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>10 / 22</span></div>
+</section>
+
+<!-- ============ SLIDE 11 FEATURES ============ -->
+<section class="slide" data-id="11">
+  <div class="hd"><div class="brand"><svg class="logo spin-slow"><use href="#taiji"/></svg><div><div class="pname serif">小六壬 AI · 玄机</div><div class="ptitle">第四章 · 核心功能</div></div></div><div class="chip">FEATURES</div></div>
+  <div class="pageHd"><div><div class="chap">CHAPTER 04</div><div class="ttl">四大核心功能 · 产品截图<span class="sub">CORE FEATURES</span></div></div><div class="text-right text-xs text-gray-400 tracking-widest">P.11</div></div>
+  <div class="flex-1 grid grid-cols-12 gap-4">
+    <div class="col-span-7 grid grid-cols-2 gap-3">
+      <div class="card p-4"><div class="flex items-center gap-2"><div class="h-num text-2xl">01</div><div class="serif text-lg">专业占卜引擎</div></div><div class="text-xs text-gray-300 mt-2 leading-relaxed">自研小六壬规则引擎 + 12 万条卦辞知识库；精准还原"宫位 → 卦象 → 应期 → 应事"四层结构，准确度达<span class="gold2"> 98% </span>专业师傅一致性。</div></div>
+      <div class="card p-4"><div class="flex items-center gap-2"><div class="h-num text-2xl">02</div><div class="serif text-lg">AI 多轮追问机器人</div></div><div class="text-xs text-gray-300 mt-2 leading-relaxed">基于自研垂域模型 + RAG，<span class="gold2">主动追问、上下文记忆 30 轮</span>；能识别用户真实意图（事业 / 感情 / 健康）并切换话术风格。</div></div>
+      <div class="card p-4"><div class="flex items-center gap-2"><div class="h-num text-2xl">03</div><div class="serif text-lg">情绪疗愈对话</div></div><div class="text-xs text-gray-300 mt-2 leading-relaxed">融合 CBT 认知行为疗法 + 正念话术；当识别到<span class="gold2">极端负面情绪</span>，自动切换"安抚模式"并引导专业心理热线。</div></div>
+      <div class="card p-4"><div class="flex items-center gap-2"><div class="h-num text-2xl">04</div><div class="serif text-lg">东方美学卦象可视化</div></div><div class="text-xs text-gray-300 mt-2 leading-relaxed">动态铜钱 + 太极动效 + 烫金宫位卡；<span class="gold2">一键生成分享海报</span>，朋友圈自传播率 28%。</div></div>
+    </div>
+    <div class="col-span-5 card p-4 flex flex-col items-center justify-center">
+      <div class="text-xs gold2 tracking-widest mb-3">PRODUCT MOCKUP · 产品截图占位</div>
+      <div class="flex gap-3">
+        <div class="w-32 h-72 rounded-2xl border-2 border-yellow-700/40 bg-gradient-to-b from-purple-900/40 to-black/60 flex flex-col items-center justify-center p-3">
+          <svg class="opacity-70" style="width:60px;height:60px"><use href="#coin"/></svg>
+          <div class="serif gold2 text-sm mt-3 text-center">起卦中…<br/>大安宫</div>
+          <div class="mt-auto text-[10px] text-gray-500">小程序首页</div>
+        </div>
+        <div class="w-32 h-72 rounded-2xl border-2 border-yellow-700/40 bg-gradient-to-b from-indigo-900/40 to-black/60 flex flex-col items-center justify-center p-3">
+          <svg class="opacity-70 spin-slow" style="width:60px;height:60px"><use href="#taiji"/></svg>
+          <div class="serif gold2 text-xs mt-3 text-center leading-tight">"近期感情<br/>有何走向？"</div>
+          <div class="mt-2 text-[10px] text-gray-300 text-center leading-snug">AI：本卦速喜临门，<br/>主三日内有讯…</div>
+          <div class="mt-auto text-[10px] text-gray-500">追问对话页</div>
+        </div>
+        <div class="w-32 h-72 rounded-2xl border-2 border-yellow-700/40 bg-gradient-to-b from-pink-900/30 to-black/60 flex flex-col items-center justify-center p-3">
+          <div class="text-pink-200 text-xs">情绪陪伴模式</div>
+          <div class="serif gold2 text-xs mt-3 text-center leading-snug">"我听到你了，<br/>这件事确实让人<br/>很委屈…"</div>
+          <div class="mt-auto text-[10px] text-gray-500">疗愈对话页</div>
+        </div>
+      </div>
+      <div class="text-[10px] text-gray-500 mt-3">（最终视觉以发布版为准）</div>
+    </div>
+  </div>
+  <div class="ft"><span>玄机 AI · 战略汇报</span><span class="conf">CONFIDENTIAL</span><span>11 / 22</span></div>
+</section>
+
+<!-- ============ remaining placeholders ============ -->
 <section class="slide" data-id="12"><!-- PLACEHOLDER_12 --></section>
-<!-- SLIDE 13 -->
 <section class="slide" data-id="13"><!-- PLACEHOLDER_13 --></section>
-<!-- SLIDE 14 -->
 <section class="slide" data-id="14"><!-- PLACEHOLDER_14 --></section>
-<!-- SLIDE 15 -->
 <section class="slide" data-id="15"><!-- PLACEHOLDER_15 --></section>
-<!-- SLIDE 16 -->
 <section class="slide" data-id="16"><!-- PLACEHOLDER_16 --></section>
-<!-- SLIDE 17 -->
 <section class="slide" data-id="17"><!-- PLACEHOLDER_17 --></section>
-<!-- SLIDE 18 -->
 <section class="slide" data-id="18"><!-- PLACEHOLDER_18 --></section>
-<!-- SLIDE 19 -->
 <section class="slide" data-id="19"><!-- PLACEHOLDER_19 --></section>
-<!-- SLIDE 20 -->
 <section class="slide" data-id="20"><!-- PLACEHOLDER_20 --></section>
-<!-- SLIDE 21 -->
 <section class="slide" data-id="21"><!-- PLACEHOLDER_21 --></section>
-<!-- SLIDE 22 -->
 <section class="slide" data-id="22"><!-- PLACEHOLDER_22 --></section>
 
 </div>
@@ -374,13 +391,11 @@
   },{passive:true});
   window.__chartHooks={};
 
-  // global chart defaults
   Chart.defaults.color='#cfc6e8';
   Chart.defaults.font.family="'Noto Sans SC',sans-serif";
   Chart.defaults.borderColor='rgba(212,175,55,.18)';
-  const GOLD='#d4af37', GOLD2='#f5d77a', MIST='#b9a7e6', PURPLE='#7e5bef', RED='#e07a8b';
+  const GOLD='#d4af37', GOLD2='#f5d77a', MIST='#b9a7e6', PURPLE='#7e5bef', RED='#e07a8b', GREEN='#6ddfb8';
 
-  // CHART 4 - radar core value
   function build4(){
     const el=document.getElementById('ch4'); if(!el||el.dataset.done) return; el.dataset.done=1;
     new Chart(el,{type:'radar',data:{labels:['文化深度','情绪疗愈','娱乐属性','合规安全','响应速度','付费习惯匹配'],datasets:[
@@ -389,15 +404,30 @@
       {label:'真人玄学师傅',data:[80,75,55,30,20,75],backgroundColor:'rgba(224,122,139,.15)',borderColor:RED,borderWidth:1.5,pointBackgroundColor:RED}
     ]},options:{plugins:{legend:{position:'bottom'}},scales:{r:{angleLines:{color:'rgba(212,175,55,.15)'},grid:{color:'rgba(212,175,55,.15)'},pointLabels:{color:'#f5d77a',font:{size:13,family:"'Noto Serif SC',serif"}},ticks:{display:false,backdropColor:'transparent'},suggestedMin:0,suggestedMax:100}}}});
   }
-  // CHART 6 - mental health bars
   function build6(){
     const el=document.getElementById('ch6'); if(!el||el.dataset.done) return; el.dataset.done=1;
     new Chart(el,{type:'bar',data:{labels:['抑郁症患者','焦虑障碍人群','失眠人群','亚健康/情绪困扰','已接受心理咨询'],datasets:[{label:'人群规模（万人）',data:[9500,10800,30000,42000,800],backgroundColor:['#d4af37','#e8c25a','#b9a7e6','#7e5bef','#e07a8b'],borderRadius:6}]},options:{indexAxis:'y',plugins:{legend:{display:false},title:{display:true,text:'中国心理 / 情绪健康人群规模 vs 已被服务人群（万人）',color:'#f5d77a',font:{size:13,family:"'Noto Serif SC',serif"}}},scales:{x:{grid:{color:'rgba(212,175,55,.08)'},ticks:{callback:v=>v>=10000?(v/10000)+'亿':v+'万'}},y:{grid:{display:false}}}}});
   }
-  window.__chartHooks[3]=build4; // index 3 = slide 4
+  function build7(){
+    const el=document.getElementById('ch7'); if(!el||el.dataset.done) return; el.dataset.done=1;
+    new Chart(el,{type:'bar',data:{labels:['2020','2021','2022','2023','2024','2025E','2026E'],datasets:[
+      {label:'泛玄学市场 (亿)',data:[420,560,720,890,1200,1520,1880],backgroundColor:'rgba(212,175,55,.7)',borderRadius:6,stack:'a'},
+      {label:'AI 玄学 / 情绪 (亿)',data:[2,8,22,55,140,320,620],backgroundColor:'rgba(109,223,184,.85)',borderRadius:6,stack:'a'}
+    ]},options:{plugins:{legend:{position:'bottom'},title:{display:true,text:'中国泛玄学市场规模与 AI 玄学渗透（单位：亿元）',color:'#f5d77a',font:{size:13,family:"'Noto Serif SC',serif"}}},scales:{x:{grid:{color:'rgba(212,175,55,.06)'}},y:{grid:{color:'rgba(212,175,55,.08)'},ticks:{callback:v=>v+'亿'}}}}});
+  }
+  function build8(){
+    const el=document.getElementById('ch8'); if(!el||el.dataset.done) return; el.dataset.done=1;
+    new Chart(el,{type:'line',data:{labels:['2020','2021','2022','2023','2024'],datasets:[
+      {label:'B 站国学/玄学视频累计播放（亿）',data:[1.2,2.6,5.1,8.4,12.0],borderColor:GOLD,backgroundColor:'rgba(212,175,55,.15)',tension:.35,fill:true,pointRadius:4},
+      {label:'小红书 #玄学 笔记（万）',data:[12,48,140,320,580],borderColor:RED,backgroundColor:'rgba(224,122,139,.1)',tension:.35,fill:true,pointRadius:4},
+      {label:'知乎"小六壬"搜索指数',data:[18,30,52,82,150],borderColor:GREEN,backgroundColor:'rgba(109,223,184,.1)',tension:.35,fill:true,pointRadius:4}
+    ]},options:{plugins:{legend:{position:'bottom'},title:{display:true,text:'年轻人国学 / 玄学内容消费曲线（5 年）',color:'#f5d77a',font:{size:13,family:"'Noto Serif SC',serif"}}},scales:{x:{grid:{color:'rgba(212,175,55,.06)'}},y:{grid:{color:'rgba(212,175,55,.08)'}}}}});
+  }
+  window.__chartHooks[3]=build4;
   window.__chartHooks[5]=build6;
-  // initial render of any visible
-  setTimeout(()=>{build4();build6();},200);
+  window.__chartHooks[6]=build7;
+  window.__chartHooks[7]=build8;
+  setTimeout(()=>{build4();build6();build7();build8();},200);
 </script>
 
 </body>
